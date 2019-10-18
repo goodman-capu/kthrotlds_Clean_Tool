@@ -5,8 +5,8 @@
 本脚本用于处理截至2019年10月的病毒变种。相对于之前的病毒，有如下变化：
 
 * 病毒实际位于`/usr/bin/[kthrotlds]`
-* crontab内容换汤不换药，具体内容见[cron root.txt](Virus (DO NOT EXECUTE!!!)/cron root.txt)
-* `/etc/cron.hourly`，`/etc/cron.daily`，`/etc/cron.monthly`，`/usr/local/bin/nptd`被病毒感染，具体内容见[cron hourly.txt](Virus (DO NOT EXECUTE!!!)/cron hourly.txt)
+* crontab内容换汤不换药，具体内容见[cron_root.txt](Virus_DO_NOT_EXECUTE/cron_root.txt)
+* `/etc/cron.hourly`，`/etc/cron.daily`，`/etc/cron.monthly`，`/usr/local/bin/nptd`被病毒感染，具体内容见[cron_hourly.txt](Virus_DO_NOT_EXECUTE/cron_hourly.txt)
 * 存在可疑进程`systemd-logind`和`agetty`，不确定是否和病毒有关
 * 相比之前的清理过程，发现很多文件都被锁住无法修改，故干脆在删除每个文件之前都执行一次`busybox chattr -i`
 * 会向`/root/.ssh/authorized_keys`中写入攻击者的公钥
