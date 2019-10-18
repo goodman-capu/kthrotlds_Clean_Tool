@@ -19,6 +19,7 @@
 * 立即重启服务器
 * 删除`/root/.ssh/authorized_keys`下的攻击者公钥（`ssh-rsa AAAAB...A76WH user@localhost`）
 * 恢复`/etc/ssh/sshd_config`配置，主要查看`PermitRootLogin`，`RSAAuthentication`，`PubkeyAuthentication`，`UsePAM`，`PasswordAuthentication`这五项，以及文件末尾有无多余重复内容
+*  查看常用指令（例如`rm`，`wget`）是否正常，否则重新安装
 
 ## 免责声明
 
