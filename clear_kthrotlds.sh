@@ -10,10 +10,10 @@ busybox chattr -i /usr/local/lib/libcset.so
 busybox rm -f /usr/local/lib/libcset.so
 
 # 清理异常进程
-busybox ps -ef | busybox grep -v grep | busybox egrep 'systemd-logind' | busybox awk '{print $1}' | busybox xargs kill -9
-busybox ps -ef | busybox grep -v grep | busybox egrep 'agetty' | busybox awk '{print $1}' | busybox xargs kill -9
-busybox ps -ef | busybox grep -v grep | busybox egrep 'ksoftirqds' | busybox awk '{print $1}' | busybox xargs kill -9
-busybox ps -ef | busybox grep -v grep | busybox egrep 'kthrotlds' | busybox awk '{print $1}' | busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'systemd-logind' && busybox awk '{print $1}' && busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'agetty' && busybox awk '{print $1}' && busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'ksoftirqds' && busybox awk '{print $1}' && busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'kthrotlds' && busybox awk '{print $1}' && busybox xargs kill -9
 
 busybox chattr -i /etc/cron.d/root
 busybox rm -f /etc/cron.d/root
@@ -49,10 +49,10 @@ busybox rm -f /etc/init.d/netdns
 ldconfig
 
 # 再次清理异常进程
-busybox ps -ef | busybox grep -v grep | busybox egrep 'systemd-logind' | busybox awk '{print $1}' | busybox xargs kill -9
-busybox ps -ef | busybox grep -v grep | busybox egrep 'agetty' | busybox awk '{print $1}' | busybox xargs kill -9
-busybox ps -ef | busybox grep -v grep | busybox egrep 'ksoftirqds' | busybox awk '{print $1}' | busybox xargs kill -9
-busybox ps -ef | busybox grep -v grep | busybox egrep 'kthrotlds' | busybox awk '{print $1}' | busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'systemd-logind' && busybox awk '{print $1}' && busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'agetty' && busybox awk '{print $1}' && busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'ksoftirqds' && busybox awk '{print $1}' && busybox xargs kill -9
+busybox ps -ef | busybox grep -v grep | busybox egrep 'kthrotlds' && busybox awk '{print $1}' && busybox xargs kill -9
 
 # 清理开机启动项
 chkconfig netdns off
